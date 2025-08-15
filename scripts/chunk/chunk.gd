@@ -1,6 +1,6 @@
 class_name Chunk extends VisibleOnScreenNotifier3D
 
-@export var group:StringName = &"Country"
+@export var group:StringName = &"World"
 @export var joint_group:StringName = &"Joint"
 
 # Called when the node enters the scene tree for the first time.

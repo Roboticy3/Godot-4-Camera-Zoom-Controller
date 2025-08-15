@@ -48,11 +48,14 @@ func _on_level_changed(from:int, to:int) -> void:
 	if stack.current.is_empty():
 		#load defaults
 		load_default()
+		await get_tree().process_frame
 		var temp := zoom_level
 		zoom_level = stack.home_level
 		while zoom_level > temp:
 			detector.update_nearest_chunk()
-			load_next(zoom_level-1)
+			if load_next(zoom_level-1) == null:
+				update_zoom_limits()
+				break
 			zoom_level -= 1
 	#going up => shift levels down and free lower levels
 	elif direction:
@@ -63,7 +66,6 @@ func _on_level_changed(from:int, to:int) -> void:
 		if !result:
 			return
 
-
 func cut_lowest():
 	if !stack.current.is_empty():
 		stack.pop()
@@ -73,6 +75,12 @@ func load_default() -> Node:
 	if !home:
 		return null
 	var n := home.instantiate()
+	if get_tree().get_node_count_in_group(home_mnt) > 1:
+		printerr("cannot load chunk! Cannot choose between " + str(get_tree().get_node_count_in_group(home_mnt)) + " mount points in " + home_mnt + "!")
+		return null
+	elif get_tree().get_node_count_in_group(home_mnt) == 0:
+		printerr("cannot load chunk! Cannot find mount point in " + home_mnt)
+		return null
 	get_tree().get_first_node_in_group(home_mnt).add_child.call_deferred(n)
 	stack.push(n)
 	return n

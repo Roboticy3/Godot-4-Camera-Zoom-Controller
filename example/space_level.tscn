@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdffvunejgtw"]
+
+[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="1_awp6v"]
+[ext_resource type="PackedScene" uid="uid://cmdffvunejgtw" path="res://Godot-4-Camera-Zoom-Controller/example/world_level.tscn" id="2_qin0t"]
+[ext_resource type="Texture2D" uid="uid://m0qpyg1c0yd6" path="res://sprites/world.png" id="3_jge66"]
+
+[node name="WorldLevel" type="Node3D"]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+script = ExtResource("1_awp6v")
+group = &"Space"
+next = ExtResource("2_qin0t")
+
+[node name="Earth" type="Sprite3D" parent="VisibleOnScreenNotifier3D"]
+pixel_size = 128.0
+billboard = 1
+texture = ExtResource("3_jge66")

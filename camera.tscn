@@ -5,14 +5,14 @@
 [ext_resource type="Resource" uid="uid://cl8uhqchkwqga" path="res://Godot-4-Camera-Zoom-Controller/example/limits.tres" id="2_iu03u"]
 [ext_resource type="Script" uid="uid://h8o283dypimv" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_navigator.gd" id="3_20bnu"]
 [ext_resource type="Script" uid="uid://cl7gu17npx0ts" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_detector.gd" id="4_6vo07"]
-[ext_resource type="Script" uid="uid://nh6bkvku854f" path="res://debug_tools/scripts/node_readout.gd" id="4_ab6jq"]
+[ext_resource type="Script" uid="uid://nh6bkvku854f" path="res://Godot-4-Camera-Zoom-Controller/debug_tools/scripts/node_readout.gd" id="4_ab6jq"]
 [ext_resource type="Script" uid="uid://usyevmrhq2ss" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_fader.gd" id="5_ear6m"]
 [ext_resource type="Script" uid="uid://b6pwwqm532pmg" path="res://Godot-4-Camera-Zoom-Controller/scripts/player_camera/player_camera_levels.gd" id="5_jrfvk"]
 [ext_resource type="Script" uid="uid://yye0h0cwmvwe" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_loader.gd" id="6_i1trh"]
 [ext_resource type="Script" uid="uid://beutrtff7x8fc" path="res://Godot-4-Camera-Zoom-Controller/highlight/scripts/highlight_sprite3d_child.gd" id="6_iubk5"]
 [ext_resource type="PackedScene" uid="uid://cm2qu88kalu0b" path="res://Godot-4-Camera-Zoom-Controller/highlight/scenes/shine.tscn" id="7_iubk5"]
-[ext_resource type="PackedScene" uid="uid://doxmyexovx3ld" path="res://logic_world/scenes/space_level.tscn" id="8_i1trh"]
 [ext_resource type="Script" uid="uid://c05bs7wjag685" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk_stack.gd" id="11_iu03u"]
+[ext_resource type="PackedScene" uid="uid://cmdffvunejgtw" path="res://Godot-4-Camera-Zoom-Controller/example/space_level.tscn" id="13_ikenp"]
 
 [sub_resource type="Resource" id="Resource_jrfvk"]
 script = ExtResource("11_iu03u")
@@ -39,6 +39,7 @@ offset_top = 27.0
 offset_right = 1080.0
 offset_bottom = 94.0
 mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 fit_content = true
 script = ExtResource("4_ab6jq")
 prop_list = Array[StringName]([&"name", &"last_zoom_level", &"last_fade_weight", &"global_position"])
@@ -67,7 +68,7 @@ script = ExtResource("6_i1trh")
 detector = NodePath("../ChunkDetector")
 limits = ExtResource("2_iu03u")
 stack = SubResource("Resource_jrfvk")
-home = ExtResource("8_i1trh")
+home = ExtResource("13_ikenp")
 
 [node name="NavReadouts" type="VBoxContainer" parent="ChunkNavigator"]
 anchors_preset = 12

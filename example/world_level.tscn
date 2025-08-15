@@ -1,16 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmdffvunejgtw"]
+[gd_scene load_steps=6 format=3 uid="uid://cmdffvunejgtw"]
 
-[ext_resource type="Texture2D" uid="uid://m0qpyg1c0yd6" path="res://sprites/world.png" id="1_qo14h"]
+[ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://gif/arg-0-50-trans.gif" id="1_fmqxm"]
 [ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="2_rfis8"]
-[ext_resource type="PackedScene" uid="uid://2mupenkbg4kq" path="res://Godot-4-Camera-Zoom-Controller/example/country_level.tscn" id="3_vxh6n"]
+[ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://gif/arg-1-50-trans.gif" id="4_hj76d"]
+[ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://gif/arg-2-50-trans.gif" id="6_3vurk"]
+[ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://gif/arg-3-50-trans.gif" id="8_f2w70"]
 
-[node name="WorldLevel" type="Node3D"]
+[node name="CountryLevel" type="Node3D"]
 
-[node name="Earth" type="Sprite3D" parent="."]
-pixel_size = 0.0025
-billboard = 1
-fixed_size = true
-texture = ExtResource("1_qo14h")
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -738, 0, 196)
 script = ExtResource("2_rfis8")
-group = &"World"
-next = ExtResource("3_vxh6n")
+
+[node name="Level0" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D"]
+pixel_size = 3.0
+billboard = 1
+sprite_frames = ExtResource("1_fmqxm")
+animation = &"gif"
+autoplay = "gif"
+frame_progress = 0.360174
+
+[node name="VisibleOnScreenNotifier3D2" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 235, 0, -140)
+script = ExtResource("2_rfis8")
+
+[node name="Level1" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D2"]
+pixel_size = 3.0
+billboard = 1
+sprite_frames = ExtResource("4_hj76d")
+animation = &"gif"
+autoplay = "gif"
+
+[node name="VisibleOnScreenNotifier3D3" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 380, 0, 584)
+script = ExtResource("2_rfis8")
+
+[node name="Level2" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D3"]
+pixel_size = 3.0
+billboard = 1
+sprite_frames = ExtResource("6_3vurk")
+animation = &"gif"
+autoplay = "gif"
+
+[node name="VisibleOnScreenNotifier3D4" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 626, 0, -170)
+script = ExtResource("2_rfis8")
+
+[node name="Level3" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D4"]
+pixel_size = 3.0
+billboard = 1
+sprite_frames = ExtResource("8_f2w70")
+animation = &"gif"
+autoplay = "gif"
