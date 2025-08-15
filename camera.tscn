@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://usyevmrhq2ss" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_fader.gd" id="5_ear6m"]
 [ext_resource type="Script" uid="uid://b6pwwqm532pmg" path="res://Godot-4-Camera-Zoom-Controller/scripts/player_camera/player_camera_levels.gd" id="5_jrfvk"]
 [ext_resource type="Script" uid="uid://yye0h0cwmvwe" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk_navigator/chunk_loader.gd" id="6_i1trh"]
-[ext_resource type="Script" uid="uid://beutrtff7x8fc" path="res://highlight/scripts/highlight_sprite3d_child.gd" id="6_iubk5"]
-[ext_resource type="PackedScene" uid="uid://cm2qu88kalu0b" path="res://highlight/scenes/shine.tscn" id="7_iubk5"]
+[ext_resource type="Script" uid="uid://beutrtff7x8fc" path="res://Godot-4-Camera-Zoom-Controller/highlight/scripts/highlight_sprite3d_child.gd" id="6_iubk5"]
+[ext_resource type="PackedScene" uid="uid://cm2qu88kalu0b" path="res://Godot-4-Camera-Zoom-Controller/highlight/scenes/shine.tscn" id="7_iubk5"]
 [ext_resource type="PackedScene" uid="uid://doxmyexovx3ld" path="res://logic_world/scenes/space_level.tscn" id="8_i1trh"]
 [ext_resource type="Script" uid="uid://c05bs7wjag685" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk_stack.gd" id="11_iu03u"]
 

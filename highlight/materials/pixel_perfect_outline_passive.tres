@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://mmxwng7utvay"]
+
+[ext_resource type="Shader" uid="uid://cywolatapa0f2" path="res://Godot-4-Camera-Zoom-Controller/highlight/materials/shaders/pixel_perfect_outline.gdshader" id="1_exmkt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_exmkt")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 6.0
