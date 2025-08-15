@@ -1,54 +1,54 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmdffvunejgtw"]
 
-[ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://gif/arg-0-50-trans.gif" id="1_fmqxm"]
-[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="2_rfis8"]
-[ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://gif/arg-1-50-trans.gif" id="4_hj76d"]
-[ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://gif/arg-2-50-trans.gif" id="6_3vurk"]
-[ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://gif/arg-3-50-trans.gif" id="8_f2w70"]
+[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="1_awp6v"]
+[ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://gif/arg-0-50-trans.gif" id="2_6fp38"]
+[ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://gif/arg-1-50-trans.gif" id="3_be26e"]
+[ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://gif/arg-2-50-trans.gif" id="4_ub1yi"]
+[ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://gif/arg-3-50-trans.gif" id="5_lpie3"]
 
-[node name="CountryLevel" type="Node3D"]
+[node name="WorldLevel" type="Node3D"]
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -738, 0, 196)
-script = ExtResource("2_rfis8")
+script = ExtResource("1_awp6v")
 
 [node name="Level0" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D"]
 pixel_size = 3.0
 billboard = 1
-sprite_frames = ExtResource("1_fmqxm")
+sprite_frames = ExtResource("2_6fp38")
 animation = &"gif"
 autoplay = "gif"
 frame_progress = 0.360174
 
 [node name="VisibleOnScreenNotifier3D2" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 235, 0, -140)
-script = ExtResource("2_rfis8")
+script = ExtResource("1_awp6v")
 
 [node name="Level1" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D2"]
 pixel_size = 3.0
 billboard = 1
-sprite_frames = ExtResource("4_hj76d")
+sprite_frames = ExtResource("3_be26e")
 animation = &"gif"
 autoplay = "gif"
 
 [node name="VisibleOnScreenNotifier3D3" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 380, 0, 584)
-script = ExtResource("2_rfis8")
+script = ExtResource("1_awp6v")
 
 [node name="Level2" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D3"]
 pixel_size = 3.0
 billboard = 1
-sprite_frames = ExtResource("6_3vurk")
+sprite_frames = ExtResource("4_ub1yi")
 animation = &"gif"
 autoplay = "gif"
 
 [node name="VisibleOnScreenNotifier3D4" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 626, 0, -170)
-script = ExtResource("2_rfis8")
+script = ExtResource("1_awp6v")
 
 [node name="Level3" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D4"]
 pixel_size = 3.0
 billboard = 1
-sprite_frames = ExtResource("8_f2w70")
+sprite_frames = ExtResource("5_lpie3")
 animation = &"gif"
 autoplay = "gif"

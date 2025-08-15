@@ -7,7 +7,11 @@ class_name ChunkLoader extends Node
 @export var stack:ChunkStack
 
 ##	Scene corresponding to the highest zoom level for this navigator
-@export var home:PackedScene
+@export var home:PackedScene  :
+	set(new_home):
+		print("home changed to ", new_home)
+		home = new_home
+		
 ##	Where to mount the home in the main scene
 @export var home_mnt:=&"Mount"
 
