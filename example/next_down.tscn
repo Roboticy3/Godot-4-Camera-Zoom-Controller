@@ -1,16 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmdffvunejgtw"]
+[gd_scene load_steps=10 format=3 uid="uid://ceaiyhs20idk0"]
 
 [ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="1_awp6v"]
-[ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://gif/arg-0-50-trans.gif" id="2_6fp38"]
-[ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://gif/arg-1-50-trans.gif" id="3_be26e"]
-[ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://gif/arg-2-50-trans.gif" id="4_ub1yi"]
-[ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://gif/arg-3-50-trans.gif" id="5_lpie3"]
+[ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://Godot-4-Camera-Zoom-Controller/example/sprites/arg-0-50-trans.gif" id="2_6fp38"]
+[ext_resource type="PackedScene" uid="uid://cq0utcqdh4dvx" path="res://Godot-4-Camera-Zoom-Controller/example/0.tscn" id="2_be26e"]
+[ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://Godot-4-Camera-Zoom-Controller/example/sprites/arg-1-50-trans.gif" id="3_be26e"]
+[ext_resource type="PackedScene" uid="uid://cvpme7r7b50jr" path="res://Godot-4-Camera-Zoom-Controller/example/1.tscn" id="4_lpie3"]
+[ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://Godot-4-Camera-Zoom-Controller/example/sprites/arg-2-50-trans.gif" id="4_ub1yi"]
+[ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://Godot-4-Camera-Zoom-Controller/example/sprites/arg-3-50-trans.gif" id="5_lpie3"]
+[ext_resource type="PackedScene" uid="uid://crhu5gkj4ldg1" path="res://Godot-4-Camera-Zoom-Controller/example/2.tscn" id="6_lpie3"]
+[ext_resource type="PackedScene" uid="uid://bo5orgpsn4i6t" path="res://Godot-4-Camera-Zoom-Controller/example/3.tscn" id="8_2ce0k"]
 
 [node name="WorldLevel" type="Node3D"]
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -738, 0, 196)
 script = ExtResource("1_awp6v")
+next = ExtResource("2_be26e")
 
 [node name="Level0" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D"]
 pixel_size = 3.0
@@ -23,6 +28,7 @@ frame_progress = 0.360174
 [node name="VisibleOnScreenNotifier3D2" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 235, 0, -140)
 script = ExtResource("1_awp6v")
+next = ExtResource("4_lpie3")
 
 [node name="Level1" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D2"]
 pixel_size = 3.0
@@ -34,6 +40,7 @@ autoplay = "gif"
 [node name="VisibleOnScreenNotifier3D3" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 380, 0, 584)
 script = ExtResource("1_awp6v")
+next = ExtResource("6_lpie3")
 
 [node name="Level2" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D3"]
 pixel_size = 3.0
@@ -45,6 +52,7 @@ autoplay = "gif"
 [node name="VisibleOnScreenNotifier3D4" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 626, 0, -170)
 script = ExtResource("1_awp6v")
+next = ExtResource("8_2ce0k")
 
 [node name="Level3" type="AnimatedSprite3D" parent="VisibleOnScreenNotifier3D4"]
 pixel_size = 3.0

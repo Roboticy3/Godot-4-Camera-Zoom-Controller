@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr6cjj7k5bmyp"]
+[gd_scene load_steps=6 format=3 uid="uid://cr6cjj7k5bmyp"]
 
 [ext_resource type="PackedScene" uid="uid://bvdop6meuj0ll" path="res://Godot-4-Camera-Zoom-Controller/camera.tscn" id="1_u6eqo"]
+[ext_resource type="PackedScene" uid="uid://cmdffvunejgtw" path="res://Godot-4-Camera-Zoom-Controller/example/base.tscn" id="2_mnb1t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dd4xf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -27,4 +28,9 @@ shadow_enabled = true
 [node name="Camera3D" parent="." instance=ExtResource("1_u6eqo")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30000, 0)
 
+[node name="ChunkLoader" parent="Camera3D/ChunkNavigator" index="2"]
+home = ExtResource("2_mnb1t")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[editable path="Camera3D"]

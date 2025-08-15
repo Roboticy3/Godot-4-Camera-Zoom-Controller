@@ -3,4 +3,4 @@
 [node name="Cube" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(9.14878, 7.33936, -16.1998, 0, 18.2176, 8.25351, 17.7848, -3.77548, 8.33342, 0, 0, 0)
+transform = Transform3D(9.14878, 7.33936, -16.1998, 0, 18.2176, 8.25351, 17.7848, -3.77548, 8.33342, 0, -50, 0)

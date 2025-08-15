@@ -3,4 +3,4 @@
 [node name="Cylinder" type="Node3D"]
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(14.3528, -10.1727, 9.51381, 0, 13.6611, 14.6073, -13.9283, -10.4828, 9.80379, 0, 0, 0)
+transform = Transform3D(14.3528, -10.1727, 9.51381, 0, 13.6611, 14.6073, -13.9283, -10.4828, 9.80379, 0, -50, 0)

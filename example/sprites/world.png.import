@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m0qpyg1c0yd6"
-path.s3tc="res://.godot/imported/world.png-9182abe53373d98fc6892dad66ee6c10.s3tc.ctex"
+path.s3tc="res://.godot/imported/world.png-c58be4a0bb23eb886e3ad235cb911532.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Godot-4-Camera-Zoom-Controller/example/world.png"
-dest_files=["res://.godot/imported/world.png-9182abe53373d98fc6892dad66ee6c10.s3tc.ctex"]
+source_file="res://Godot-4-Camera-Zoom-Controller/example/sprites/world.png"
+dest_files=["res://.godot/imported/world.png-c58be4a0bb23eb886e3ad235cb911532.s3tc.ctex"]
 
 [params]
 

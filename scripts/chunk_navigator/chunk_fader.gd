@@ -14,12 +14,19 @@ func _on_fade_changed(from:int, to:int, weight:float) -> void:
 	if stack.current.size() >= 2 and \
 		is_instance_valid(stack.current[-2]) and \
 		is_instance_valid(stack.current[-1]):
+			
 		set_recursive("transparency", 1.0 - weight, stack.current[-2])
 		set_recursive("transparency", weight, stack.current[-1], pow(base_smoothness * weight, 0.5))
 		print("set transparency by ", weight)
 func _on_level_changed(from:int, to:int):
 	if !stack.current.is_empty() and is_instance_valid(stack.current[-1]):
 		set_recursive("transparency", 0.0 if to > from else 1.0, stack.current[-1], 0.0)
+		set_recursive("visible", true, stack.current[-1])
+		if stack.current.size() >= 2 and to > from:
+			set_recursive("visible", true, stack.current[-2], 0.0)
+			set_recursive("transparency", 1.0, stack.current[-2], 0.0)
+		if stack.current.size() >= 3 and from > to:
+			set_recursive("visible", false, stack.current[-3], 0.0)
 
 ## Propogate any property through `of`'s children and indirect children.
 ## Stopping at joints. Used to control transparency and animation speed when

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bvc56jmju0nwy"
+path="res://.godot/imported/arg-4-50-trans.gif-7804b129e5d67980d8f1ff341ff16b05.tres"
+
+[deps]
+
+source_file="res://Godot-4-Camera-Zoom-Controller/example/sprites/arg-4-50-trans.gif"
+dest_files=["res://.godot/imported/arg-4-50-trans.gif-7804b129e5d67980d8f1ff341ff16b05.tres"]
+
+[params]
+
+frames_per_second=30
