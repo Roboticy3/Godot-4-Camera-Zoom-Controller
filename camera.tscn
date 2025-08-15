@@ -56,7 +56,7 @@ limits = ExtResource("2_iu03u")
 
 [node name="Highlighter" type="Node" parent="ChunkNavigator/ChunkDetector"]
 script = ExtResource("6_iubk5")
-modes = Array[PackedScene]([ExtResource("7_iubk5")])
+shine = ExtResource("7_iubk5")
 
 [node name="ChunkFader" type="Node" parent="ChunkNavigator"]
 script = ExtResource("5_ear6m")

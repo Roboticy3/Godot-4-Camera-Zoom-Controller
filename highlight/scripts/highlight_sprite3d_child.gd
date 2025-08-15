@@ -1,12 +1,11 @@
 extends Node
 
-@export var modes:Array[PackedScene]
+@export var shine:PackedScene
 
 var current_instance:Node = null
 
 var current_target:Node = null
-var current_mode:int = -1
-func set_highlight(target:Node, mode:int) -> void:
+func set_highlight(target:Node) -> void:
 	if !is_instance_valid(target):
 		return
 
@@ -14,7 +13,7 @@ func set_highlight(target:Node, mode:int) -> void:
 		current_target.remove_child(current_instance)
 		current_instance = null
 
-	if !(mode < 0 or mode >= modes.size()):
-		current_target = target
-		current_instance = modes[mode].instantiate()
-		current_target.add_child(current_instance)
+	
+	current_target = target
+	current_instance = shine.instantiate()
+	current_target.add_child(current_instance)
