@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr6cjj7k5bmyp"]
 
-[ext_resource type="PackedScene" uid="uid://bvdop6meuj0ll" path="res://infinite_zoom/camera.tscn" id="1_u6eqo"]
+[ext_resource type="PackedScene" uid="uid://bvdop6meuj0ll" path="res://Godot-4-Camera-Zoom-Controller/camera.tscn" id="1_u6eqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dd4xf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

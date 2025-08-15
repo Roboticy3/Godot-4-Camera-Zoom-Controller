@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmdffvunejgtw"]
 
 [ext_resource type="Texture2D" uid="uid://m0qpyg1c0yd6" path="res://sprites/world.png" id="1_qo14h"]
-[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://infinite_zoom/scripts/chunk/chunk.gd" id="2_rfis8"]
-[ext_resource type="PackedScene" uid="uid://2mupenkbg4kq" path="res://infinite_zoom/example/country_level.tscn" id="3_vxh6n"]
+[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="2_rfis8"]
+[ext_resource type="PackedScene" uid="uid://2mupenkbg4kq" path="res://Godot-4-Camera-Zoom-Controller/example/country_level.tscn" id="3_vxh6n"]
 
 [node name="WorldLevel" type="Node3D"]
 

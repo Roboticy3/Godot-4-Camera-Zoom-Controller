@@ -2,13 +2,13 @@
 
 [ext_resource type="SpriteFrames" uid="uid://cnqutppntpm7a" path="res://gif/arg-0-50-trans.gif" id="1_jlgfi"]
 [ext_resource type="SpriteFrames" uid="uid://bay0tvww1s4xq" path="res://gif/arg-1-50-trans.gif" id="2_4il5x"]
-[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://infinite_zoom/scripts/chunk/chunk.gd" id="2_4lqil"]
+[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk.gd" id="2_4lqil"]
 [ext_resource type="SpriteFrames" uid="uid://clkkkupbr6065" path="res://gif/arg-2-50-trans.gif" id="3_4lqil"]
-[ext_resource type="PackedScene" uid="uid://cq0utcqdh4dvx" path="res://infinite_zoom/example/0.tscn" id="3_cvi0i"]
+[ext_resource type="PackedScene" uid="uid://cq0utcqdh4dvx" path="res://Godot-4-Camera-Zoom-Controller/example/0.tscn" id="3_cvi0i"]
 [ext_resource type="SpriteFrames" uid="uid://cypap5qjcqmij" path="res://gif/arg-3-50-trans.gif" id="4_dhyg3"]
-[ext_resource type="PackedScene" uid="uid://cvpme7r7b50jr" path="res://infinite_zoom/example/1.tscn" id="5_k52t6"]
-[ext_resource type="PackedScene" uid="uid://crhu5gkj4ldg1" path="res://infinite_zoom/example/2.tscn" id="7_cnokq"]
-[ext_resource type="PackedScene" uid="uid://bo5orgpsn4i6t" path="res://infinite_zoom/example/3.tscn" id="9_a6487"]
+[ext_resource type="PackedScene" uid="uid://cvpme7r7b50jr" path="res://Godot-4-Camera-Zoom-Controller/example/1.tscn" id="5_k52t6"]
+[ext_resource type="PackedScene" uid="uid://crhu5gkj4ldg1" path="res://Godot-4-Camera-Zoom-Controller/example/2.tscn" id="7_cnokq"]
+[ext_resource type="PackedScene" uid="uid://bo5orgpsn4i6t" path="res://Godot-4-Camera-Zoom-Controller/example/3.tscn" id="9_a6487"]
 
 [node name="CountryLevel" type="Node3D"]
 

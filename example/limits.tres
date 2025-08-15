@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PlayerCameraZoomLimits" load_steps=9 format=3 uid="uid://cl8uhqchkwqga"]
 
-[ext_resource type="Script" uid="uid://h4425cccsc1t" path="res://infinite_zoom/scripts/chunk/chunk_layer.gd" id="1_yvw3y"]
-[ext_resource type="Script" uid="uid://dvlyluvn1u06r" path="res://infinite_zoom/scripts/chunk/chunk_layer_set.gd" id="2_d3q7r"]
-[ext_resource type="Script" uid="uid://cm8qvhhjaue23" path="res://infinite_zoom/scripts/player_camera/player_camera_zoom_limits.gd" id="3_50epb"]
+[ext_resource type="Script" uid="uid://h4425cccsc1t" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk_layer.gd" id="1_yvw3y"]
+[ext_resource type="Script" uid="uid://dvlyluvn1u06r" path="res://Godot-4-Camera-Zoom-Controller/scripts/chunk/chunk_layer_set.gd" id="2_d3q7r"]
+[ext_resource type="Script" uid="uid://cm8qvhhjaue23" path="res://Godot-4-Camera-Zoom-Controller/scripts/player_camera/player_camera_zoom_limits.gd" id="3_50epb"]
 
 [sub_resource type="Resource" id="Resource_4wg0p"]
 script = ExtResource("1_yvw3y")
