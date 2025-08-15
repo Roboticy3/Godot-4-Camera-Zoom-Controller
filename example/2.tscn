@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crhu5gkj4ldg1"]
+
+[node name="Sphere" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)

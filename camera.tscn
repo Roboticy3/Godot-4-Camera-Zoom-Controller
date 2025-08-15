@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://bvdop6meuj0ll"]
+
+[ext_resource type="Script" uid="uid://c87ydpcw0htqe" path="res://infinite_zoom/scripts/player_camera/player_camera.gd" id="1_4wbsp"]
+[ext_resource type="Script" uid="uid://yn1rd066vdua" path="res://infinite_zoom/scripts/player_camera/player_camera_controller.gd" id="2_bny34"]
+[ext_resource type="Resource" uid="uid://cl8uhqchkwqga" path="res://infinite_zoom/example/limits.tres" id="2_iu03u"]
+[ext_resource type="Script" uid="uid://h8o283dypimv" path="res://infinite_zoom/scripts/chunk_navigator/chunk_navigator.gd" id="3_20bnu"]
+[ext_resource type="Script" uid="uid://cl7gu17npx0ts" path="res://infinite_zoom/scripts/chunk_navigator/chunk_detector.gd" id="4_6vo07"]
+[ext_resource type="Script" uid="uid://nh6bkvku854f" path="res://debug_tools/scripts/node_readout.gd" id="4_ab6jq"]
+[ext_resource type="Script" uid="uid://usyevmrhq2ss" path="res://infinite_zoom/scripts/chunk_navigator/chunk_fader.gd" id="5_ear6m"]
+[ext_resource type="Script" uid="uid://b6pwwqm532pmg" path="res://infinite_zoom/scripts/player_camera/player_camera_levels.gd" id="5_jrfvk"]
+[ext_resource type="Script" uid="uid://yye0h0cwmvwe" path="res://infinite_zoom/scripts/chunk_navigator/chunk_loader.gd" id="6_i1trh"]
+[ext_resource type="Script" uid="uid://beutrtff7x8fc" path="res://highlight/scripts/highlight_sprite3d_child.gd" id="6_iubk5"]
+[ext_resource type="PackedScene" uid="uid://cm2qu88kalu0b" path="res://highlight/scenes/shine.tscn" id="7_iubk5"]
+[ext_resource type="PackedScene" uid="uid://doxmyexovx3ld" path="res://logic_world/scenes/space_level.tscn" id="8_i1trh"]
+[ext_resource type="Script" uid="uid://c05bs7wjag685" path="res://infinite_zoom/scripts/chunk/chunk_stack.gd" id="11_iu03u"]
+
+[sub_resource type="Resource" id="Resource_jrfvk"]
+script = ExtResource("11_iu03u")
+home_level = 3
+metadata/_custom_type_script = "uid://c05bs7wjag685"
+
+[node name="Camera3D" type="Camera3D" node_paths=PackedStringArray("levels")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+far = 1e+06
+script = ExtResource("1_4wbsp")
+levels = NodePath("CameraLevels")
+
+[node name="CameraController" type="Node" parent="." node_paths=PackedStringArray("view")]
+script = ExtResource("2_bny34")
+view = NodePath("..")
+
+[node name="CameraLevels" type="Node3D" parent="."]
+script = ExtResource("5_jrfvk")
+limits = ExtResource("2_iu03u")
+
+[node name="Readout" type="RichTextLabel" parent="CameraLevels"]
+offset_left = 48.0
+offset_top = 27.0
+offset_right = 1080.0
+offset_bottom = 94.0
+mouse_filter = 2
+fit_content = true
+script = ExtResource("4_ab6jq")
+prop_list = Array[StringName]([&"name", &"last_zoom_level", &"last_fade_weight", &"global_position"])
+
+[node name="ChunkNavigator" type="Node3D" parent="." node_paths=PackedStringArray("loader", "detector", "fader", "view")]
+script = ExtResource("3_20bnu")
+loader = NodePath("ChunkLoader")
+detector = NodePath("ChunkDetector")
+fader = NodePath("ChunkFader")
+view = NodePath("..")
+
+[node name="ChunkDetector" type="Node3D" parent="ChunkNavigator"]
+script = ExtResource("4_6vo07")
+limits = ExtResource("2_iu03u")
+
+[node name="Highlighter" type="Node" parent="ChunkNavigator/ChunkDetector"]
+script = ExtResource("6_iubk5")
+modes = Array[PackedScene]([ExtResource("7_iubk5")])
+
+[node name="ChunkFader" type="Node" parent="ChunkNavigator"]
+script = ExtResource("5_ear6m")
+stack = SubResource("Resource_jrfvk")
+
+[node name="ChunkLoader" type="Node" parent="ChunkNavigator" node_paths=PackedStringArray("detector")]
+script = ExtResource("6_i1trh")
+detector = NodePath("../ChunkDetector")
+limits = ExtResource("2_iu03u")
+stack = SubResource("Resource_jrfvk")
+home = ExtResource("8_i1trh")
+
+[node name="NavReadouts" type="VBoxContainer" parent="ChunkNavigator"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -99.0
+offset_right = -28.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Readout" type="RichTextLabel" parent="ChunkNavigator/NavReadouts"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true
+script = ExtResource("4_ab6jq")
+target_path = NodePath("../../ChunkDetector")
+prop_list = Array[StringName]([&"name", &"zoom_level", &"nearest_chunk"])
+
+[node name="Readout2" type="RichTextLabel" parent="ChunkNavigator/NavReadouts"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true
+script = ExtResource("4_ab6jq")
+target_path = NodePath("../../ChunkFader")
+
+[node name="Readout3" type="RichTextLabel" parent="ChunkNavigator/NavReadouts"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true
+script = ExtResource("4_ab6jq")
+target_path = NodePath("../../ChunkLoader")
+
+[connection signal="nearest_chunk_changed" from="ChunkNavigator/ChunkDetector" to="ChunkNavigator/ChunkDetector/Highlighter" method="set_highlight" binds= [0]]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr6cjj7k5bmyp"]
+
+[ext_resource type="PackedScene" uid="uid://bvdop6meuj0ll" path="res://infinite_zoom/camera.tscn" id="1_dd4xf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dd4xf"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_j0n2u"]
+sky_material = SubResource("ProceduralSkyMaterial_dd4xf")
+
+[sub_resource type="Environment" id="Environment_73uj5"]
+background_mode = 2
+sky = SubResource("Sky_j0n2u")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd4xf"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0n2u"]
+albedo_color = Color(1, 0.966667, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73uj5"]
+albedo_color = Color(0, 1, 0.0166667, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j6yq"]
+albedo_color = Color(0, 0.983334, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwxq5"]
+albedo_color = Color(0, 0.166667, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_73uj5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="."]
+
+[node name="Camera3D" parent="." instance=ExtResource("1_dd4xf")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+far = 1e+06
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_dd4xf")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+size = Vector3(10, 10, 10)
+material = SubResource("StandardMaterial3D_j0n2u")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+size = Vector3(100, 100, 100)
+material = SubResource("StandardMaterial3D_73uj5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+size = Vector3(1000, 1000, 1000)
+material = SubResource("StandardMaterial3D_0j6yq")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+size = Vector3(10000, 10000, 10000)
+material = SubResource("StandardMaterial3D_kwxq5")

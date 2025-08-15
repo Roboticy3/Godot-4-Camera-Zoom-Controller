@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmmeprykwbbp1"]
+
+[ext_resource type="Script" uid="uid://c87ydpcw0htqe" path="res://infinite_zoom/scripts/player_camera/player_camera.gd" id="1_21aox"]
+[ext_resource type="Script" uid="uid://dmbe57dkr7fvg" path="res://infinite_zoom/portable/portable_controller.gd" id="2_n0mkd"]
+
+[node name="CameraPortable" type="Camera3D"]
+script = ExtResource("1_21aox")
+metadata/_custom_type_script = "uid://c87ydpcw0htqe"
+
+[node name="ControllerPortable" type="Node" parent="." node_paths=PackedStringArray("view")]
+script = ExtResource("2_n0mkd")
+view = NodePath("..")

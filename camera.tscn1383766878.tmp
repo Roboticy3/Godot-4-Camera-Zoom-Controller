@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvdop6meuj0ll"]
+
+[ext_resource type="Script" uid="uid://c87ydpcw0htqe" path="res://infinite_zoom/scripts/player_camera.gd" id="1_4wbsp"]
+[ext_resource type="Script" uid="uid://yn1rd066vdua" path="res://infinite_zoom/scripts/player_camera_controller.gd" id="2_bny34"]
+[ext_resource type="Script" uid="uid://h8o283dypimv" path="res://infinite_zoom/scripts/chunk_navigator.gd" id="3_20bnu"]
+[ext_resource type="Script" uid="uid://nh6bkvku854f" path="res://debug_tools/scripts/node_readout.gd" id="4_ab6jq"]
+[ext_resource type="PackedScene" uid="uid://2mupenkbg4kq" path="res://infinite_zoom/example/levels.tscn" id="4_dvo68"]
+[ext_resource type="Script" uid="uid://dj1ki5j52riso" path="res://highlight/scripts/highlight_modes_single.gd" id="5_iubk5"]
+[ext_resource type="Material" uid="uid://b6v7rbe7xk0r8" path="res://highlight/materials/pixel_perfect_outline_active.tres" id="6_dvo68"]
+[ext_resource type="Material" uid="uid://mmxwng7utvay" path="res://highlight/materials/pixel_perfect_outline_passive.tres" id="7_6vo07"]
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_4wbsp")
+
+[node name="CameraController" type="Node" parent="."]
+script = ExtResource("2_bny34")
+
+[node name="ChunkNavigator" type="Node3D" parent="."]
+script = ExtResource("3_20bnu")
+chunk_layers = Array[StringName]([&"Substage", &"Stage", &"Country", &"World", &"Space"])
+chunk_defaults = Array[PackedScene]([null, null, ExtResource("4_dvo68"), null, null])
+
+[node name="Readout" type="RichTextLabel" parent="ChunkNavigator"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -74.0
+offset_right = 425.0
+offset_bottom = -34.0
+grow_vertical = 0
+fit_content = true
+script = ExtResource("4_ab6jq")
+prop_list = Array[StringName]([&"name", &"zoom_level", &"nearest_chunk"])
+
+[node name="Highlighter" type="Node" parent="."]
+script = ExtResource("5_iubk5")
+modes = Array[Material]([ExtResource("6_dvo68"), ExtResource("7_6vo07")])
+
+[connection signal="nearest_chunk_changed" from="ChunkNavigator" to="Highlighter" method="set_highlight" binds= [0]]

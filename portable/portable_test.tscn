@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnomrseclxosy"]
+
+[ext_resource type="PackedScene" uid="uid://dmmeprykwbbp1" path="res://infinite_zoom/portable/camera_portable.tscn" id="1_0rmkb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rmkb"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_fec4y"]
+sky_material = SubResource("ProceduralSkyMaterial_0rmkb")
+
+[sub_resource type="Environment" id="Environment_8c1wr"]
+background_mode = 2
+sky = SubResource("Sky_fec4y")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="PortableTest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8c1wr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="CameraPortable" parent="." instance=ExtResource("1_0rmkb")]
+transform = Transform3D(1, 0, 0, 0, 0.863967, 0.503548, 0, -0.503548, 0.863967, -0.0600535, 2.03738, 2.76959)

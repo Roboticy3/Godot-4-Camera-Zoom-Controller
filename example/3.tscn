@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bo5orgpsn4i6t"]
+
+[node name="Torus" type="Node3D"]
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)

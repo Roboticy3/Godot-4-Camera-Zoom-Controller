@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdffvunejgtw"]
+
+[ext_resource type="Texture2D" uid="uid://m0qpyg1c0yd6" path="res://sprites/world.png" id="1_qo14h"]
+[ext_resource type="Script" uid="uid://bmweal7b8m70l" path="res://infinite_zoom/scripts/chunk/chunk.gd" id="2_rfis8"]
+[ext_resource type="PackedScene" uid="uid://2mupenkbg4kq" path="res://infinite_zoom/example/country_level.tscn" id="3_vxh6n"]
+
+[node name="WorldLevel" type="Node3D"]
+
+[node name="Earth" type="Sprite3D" parent="."]
+pixel_size = 0.0025
+billboard = 1
+fixed_size = true
+texture = ExtResource("1_qo14h")
+script = ExtResource("2_rfis8")
+group = &"World"
+next = ExtResource("3_vxh6n")

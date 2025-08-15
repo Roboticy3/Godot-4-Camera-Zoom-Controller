@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="PlayerCameraZoomLimits" load_steps=9 format=3 uid="uid://cl8uhqchkwqga"]
+
+[ext_resource type="Script" uid="uid://h4425cccsc1t" path="res://infinite_zoom/scripts/chunk/chunk_layer.gd" id="1_yvw3y"]
+[ext_resource type="Script" uid="uid://dvlyluvn1u06r" path="res://infinite_zoom/scripts/chunk/chunk_layer_set.gd" id="2_d3q7r"]
+[ext_resource type="Script" uid="uid://cm8qvhhjaue23" path="res://infinite_zoom/scripts/player_camera/player_camera_zoom_limits.gd" id="3_50epb"]
+
+[sub_resource type="Resource" id="Resource_4wg0p"]
+script = ExtResource("1_yvw3y")
+group = &"Sublevel"
+zoom_limit = 1.0
+metadata/_custom_type_script = "uid://h4425cccsc1t"
+
+[sub_resource type="Resource" id="Resource_fudbp"]
+script = ExtResource("1_yvw3y")
+group = &"Level"
+zoom_limit = 100.0
+metadata/_custom_type_script = "uid://h4425cccsc1t"
+
+[sub_resource type="Resource" id="Resource_vcy4i"]
+script = ExtResource("1_yvw3y")
+group = &"World"
+zoom_limit = 10000.0
+metadata/_custom_type_script = "uid://h4425cccsc1t"
+
+[sub_resource type="Resource" id="Resource_sdi1g"]
+script = ExtResource("1_yvw3y")
+group = &"Space"
+zoom_limit = 500000.0
+metadata/_custom_type_script = "uid://h4425cccsc1t"
+
+[sub_resource type="Resource" id="Resource_i18jg"]
+script = ExtResource("2_d3q7r")
+layers = Array[ExtResource("1_yvw3y")]([SubResource("Resource_4wg0p"), SubResource("Resource_fudbp"), SubResource("Resource_vcy4i"), SubResource("Resource_sdi1g")])
+metadata/_custom_type_script = "uid://dvlyluvn1u06r"
+
+[resource]
+script = ExtResource("3_50epb")
+min_zoom = 0
+max_zoom = 3
+layers = SubResource("Resource_i18jg")
+metadata/_custom_type_script = "uid://cm8qvhhjaue23"
